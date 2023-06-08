@@ -1,0 +1,23 @@
+services:
+
+  data-provider-service:
+    image: tederer/inen-data-provider-service
+    container_name: data-provider-service
+    ports:
+      - 8100:8100
+    environment:
+      - ACTIVATE_SWAGGER=true
+    networks:
+      - obstwein
+
+  data-consumer-service:
+    image: tederer/inen-data-consumer-service
+    container_name: data-consumer-service
+    ports:
+      - 8101:8101
+    networks:
+      - obstwein
+
+networks:
+  obstwein:
+    driver: bridge
