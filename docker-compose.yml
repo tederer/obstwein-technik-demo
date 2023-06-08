@@ -14,7 +14,7 @@ services:
     image: tederer/inen-data-consumer-service
     container_name: data-consumer-service
     ports:
-      - 8101:8101
+      - 80:8101
     networks:
       - obstwein
 
